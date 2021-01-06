@@ -1,0 +1,26 @@
+{
+  "name": "ornate-css-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Ornate CSS",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "ornate_css": "^0.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalvillainy/ornate-css-docs.git"
+  },
+  "author": "Roberto Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalvillainy/ornate-css-docs/issues"
+  },
+  "homepage": "https://github.com/digitalvillainy/ornate-css-docs#readme"
+}
