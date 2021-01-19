@@ -1,18 +1,106 @@
-<div class="grid-3-9 bg-primary" x-data="navBar">
-    <span class="font-lg p-2 text-white">
-        <a href="/">
+<div class="grid-2-10 bg-dark-primary"
+     x-data="navBar()">
+    <span class="font-md p-y-2 p-l-2 place-y-center"
+          @custom-event.window="toggleSearch(); $nextTick(()=>{ $refs.search.focus(); });">
+        <a href="/"
+           class="text-white logo font-lg hover:text-accent">
             Ornate CSS
         </a>
     </span>
+    <div class="grid-10-2 md:grid-8-4 lg:grid-10-2">
+        <div class="place-y-center hover:bg-gray b-rounded cursor-pointer p-l-3"
+             @click.away="open=false; $nextTick(()=>{ $refs.search.value=''; });"
+             @keydown.escape="open=false; $nextTick(()=>{ $refs.search.value=''; });"
+             @click="toggleSearch(); $nextTick(()=>{ $refs.search.focus(); });">
 
+            <div class="grid-11-1">
+                <div x-show="open">
+                    <input type="text" id="search"
+                           x-ref="search"
+                           @input="search"
+                           @keydown.Enter="goToTarget"
+                           @keydown.arrow-down="selectResults"
+                           placeholder="Search here"
+                           class="input-primary h-5 p-l-2 place-x-center place-y-center w-100p">
+                    <div class="bg-light-primary text-dark-primary w-100p p-2 b-rounded
+                                 raise-1-gray hover:bg-white hover:text-accent"
+                         id="results"
+                          x-ref="results"
+                          x-show="results.length > 0"
+                          @click="goToTarget"
+                          x-text="results"></div>
+                </div>
+                <span class="text-light-primary place-y-center place-x-end "
+                      x-show="!open">
+                    Use the "/" key or click here to search
+                </span>
+                <label for="search"
+                       @click="toggleSearch(); $nextTick(()=>{ $refs.search.focus(); });"
+                       class="label grid-12 place-x-center place-y-center cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="p-l-2 fill-svg text-light-primary hover:text-accent h-5 w-5 m-y-2 m-x-3"
+                         viewBox="0 0 20 20">
+                        <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8
+                                 2a6 6 0 0 0 0 12z"/>
+                    </svg>
+                </label>
+            </div>
+        </div>
+
+        <div class="text-grey p-x-2 place-y-center">
+            <div class="hover:bg-gray b-rounded p-3 cursor-pointer place-x-start">
+                <a href="/documentation"
+                   class="text-light-primary place-y-center place-x-start hover:text-accent">
+                    Documentation
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="fill-svg text-light-primary h-3 w-3"
+                     viewBox="0 0 20 20">
+                    <path d="M6 4H5a1 1 0 1 1 0-2h11V1a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0
+                2-2V5a1 1 0 0 0-1-1h-7v8l-2-2-2 2V4z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     function navBar() {
         return {
             flip: true,
-            test() {
-                console.log(`fuck you`);
+            open: false,
+            results: '',
+            toggleSearch() {
+                this.open = !this.open;
+            },
+            search(e) {
+                let target = e.target.value;
+                let location;
+                api.get(`/search/${target}`)
+                    .then((res) => {
+                        location = res.data !== 'failed' ? this.results = res.data : this.results = 'No Results...';
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            },
+            resetForm(e) {
+                this.open = 'false';
+                e.target.value = '';
+            },
+            goToTarget() {
+                if(this.results !== 'No Results...'){
+                    window.location = `./${this.results.toLowerCase()}`;
+                }
+            },
+            selectResults(){
+                let selectedClasses = ['bg-white', 'text-accent'];
+                document.getElementById('results').classList.add(...selectedClasses);
             }
+        }
+    }
+    function hotkeys() {
+        return {
+            //TODO: for body
         }
     }
 </script>

@@ -1,13 +1,345 @@
-<div class="container" x-data="test()">
-    <div class="h1 text-primary">
-        Ornate CSS
+<div x-data="home()" x-cloak class="grid-12">
+    <div class="grid-12 p-5 bg-dark-primary text-light-primary">
+        <div class="text-center logo font-xxl m-b-5">
+            <h1>Welcome to OrnateCSS!</h1>
+            <h5 class="font-lg">
+                May your code be clean, and your designs be ornate
+            </h5>
+        </div>
+    </div>
+    <div class="grid-12 lg:grid-6-6 place-x-center w-75p m-y-5">
+        <p class="lg:m-r-3">
+            Highly inspired by other frameworks like Tailwind css, and Bulma; Ornate CSS and built using
+            <a href="https://gaudiamus-css.github.io/"
+               class="hover:text-dark-accent text-accent">
+                Gaudiamus
+            </a>
+            allows developers and designers to accomplish complicated web designs while you're writing your HTML.
+            Whether you want to design using Ornate CSS' out-of-the-box solutions, or expand the utilities to fit
+            your projects, Ornate empowers your decision while remaining light and non-invasive.
+        </p>
+        <div class="text-left box-low-gray m-y-3">
+            <h5 class="font-lg text-center logo p-b-2">
+                Installation
+            </h5>
+            <div class="font-default">
+                <div class="grid-12">
+                    <span>Via NPM</span>
+                    <ul class="grid-10-2 text-warning bg-black p-l-2 b-rounded">
+                        <li class="place-y-center" x-text="[status]"></li>
+                        <li title="copy to clipboard"
+                            @click="copyNpm"
+                            class="cursor-pointer text-center p-1 b-rounded text-success
+                           hover:bg-dark-success hover:text-light-success">
+                            COPY
+                        </li>
+                    </ul>
+                    <span class="m-y-2">
+                        or use the CDN link below:
+                    </span>
+                </div>
+                <div class="grid-10-2 text-warning bg-black p-l-2 b-rounded">
+                    <span class="truncate place-y-center" x-text="[link]"></span>
+                    <span title="copy to clipboard"
+                          @click="copyLink"
+                          class="cursor-pointer text-center p-1 b-rounded text-success
+                                hover:bg-dark-success hover:text-light-success">
+                        COPY
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-12 m-t-5">
+        <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+            Basic Usage
+        </h1>
+        <div class="text-left w-75p place-x-center grid-12">
+            <p>
+                Built directly into OrnateCSS is normalize.css, a css file that essentially resets a browsers default
+                styling and forces uniformity for reliable consistency when styling your site.
+
+                Normalize is definitely the recommended css reset of its kind. Regardless, use whatever you like as long
+                as
+                you have a reset of some sort.
+            </p>
+            <p>
+                Ornate has a plethora of utility classes. The majority of which follow this simple formula for ease of
+                memorization:
+            </p>
+<div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+//name of property - side -unit number
+
+// border - bottom - 1px - solid
+.b-b-1-solid
+  // margin - top - 1em
+.m-t-1
+  // margin - top & bottom - 1em
+.m-y-1
+</code>
+</pre>
+</div>
+
+            <p>
+                As you see, when setting properties you can choose which side to affect.
+            </p>
+            <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+// Affect the entire border
+// border - 1px - solid
+.b-1-solid
+  // margin - 3em
+.m-3
+  // Y axis e.g.: top and bottom
+.m-y-2
+  // X axis e.g.: left and right
+.m-x-2
+</code>
+</pre>
+            </div>
+            <p>
+                One can even review the above and notice a pattern when wit comes to declaring properties. Knowing
+                that "m" stands for margin, you can then assume tha "p" stands for padding.
+            </p>
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                The Grid System
+            </h1>
+            <p>
+                Being powered by
+                <a href="https://gaudiamus-css.github.io/"
+                   class="hover:text-dark-accent text-accent">
+                    Gaudiamus,
+                </a> Ornate also uses CSS Grid. The grid system is now easier to implement.
+            </p>
+            <p>
+                By default, we use the common 12-grid.
+            </p>
+
+            <div class="box-low-dark-warning bg-black text-warning">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="10"
+              disabled="true">
+<div class="grid-4-4-4">
+  <div>child1</div>
+  <div>child2</div>
+  <div>child3</div>
+</div>
+    </textarea>
+            </div>
+
+            <p class="text-dark-primary">
+                Which renders out like below (color has been added to make it easier to know what's happening):
+            </p>
+            <div class="grid-4-4-4 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child1</div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child2</div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child3</div>
+            </div>
+            <p>
+                Any Combination is possible:
+            </p>
+
+            <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-7-5">
+  <div>
+    <div class="grid-6-6">
+      <div>one-1</div>
+      <div>one-2</div>
+    </div>
+  </div>
+  <div>two</div>
+</div>
+</textarea>
+            </div>
+
+            <p class="text-dark-primary">
+                Which renders out like below (color has been added to make it easier to know what's happening):
+            </p>
+            <div class="grid-7-5 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                <div>
+                    <div class="grid-6-6 bg-white b-rounded m-x-4 p-2">
+                        <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child-1</div>
+                        <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child-2</div>
+                    </div>
+                </div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-center">
+                    two
+                </div>
+            </div>
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Placement
+            </h1>
+            <p>
+                You can place elements on the x and y-axis of the grid-area with ease:
+            </p>
+            <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-3-3-3-3">
+  <span class="place-x-center">1</span>
+  <span class="place-x-end">2</span>
+  <span class="place-y-start">3</span>
+  <span class="place-y-stretch">4</span>
+</div>
+</textarea>
+            </div>
+            <p class="text-dark-primary">
+                Which renders out like below (color has been added to make it easier to know what's happening):
+            </p>
+
+            <div class="grid-3-3-3-3 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-x-center">1</span>
+                <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-x-end">2</span>
+                <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-start">3</span>
+                <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-stretch">4</span>
+            </div>
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Responsiveness
+            </h1>
+            <p>
+                What about breakpoints? We use a markup similar to tailwind css to tackle this. However, now the grid
+                really starts to make the difference. Finally, you will have an overview of your breakpoints. Start with
+                mobile and go up: (here is makes sense to play around with your window-size if you can)
+            </p>
+
+            <span>
+                "xs": 320px, "sm": 425px, "md": 768px, "lg": 1024px, "xl": 1440px, "xxl": 2560px, "xxxl":3440px
+            </span>
+
+            <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+</textarea>
+            </div>
+            <p class="text-dark-primary">
+                Which renders out like below (color has been added to make it easier to know what's happening):
+            </p>
+            <div class="grid-12
+                        md:grid-6-6
+                        lg:grid-3-3-3-3 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">1</div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">2</div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">3</div>
+                <div class="bg-dark-primary b-rounded m-x-2 p-y-2">4</div>
+            </div>
+
+            <p>
+                Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different
+                breakpoints.
+            </p>
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-5">
+                Pre-Built Utility Classes
+            </h1>
+            <div class="text-left m-t-5">
+                <span>
+                    There are two types of Utilities:
+                </span>
+                <ul>
+                    <li>1. Dashed Utilities</li>
+                    <li class="p-y-2">
+                        The most common and typically in the following format: .m-t-2
+                    </li>
+                    <li>2. Colon Utilities</li>
+                    <li class="p-y-2">
+                        Represent a condition that is met before being used. An example of this would be responsive
+                        utilities: "xs:", "sm:" , "md:", "lg:", "xl:", "xxl:", "xxxl:"
+                    </li>
+                    <li>
+                        Meanwhile, the others represent a specific state. Such as focus, hover, and active.
+                    </li>
+                </ul>
+
+                <p>
+                    In addition, there are default values that help support all the utilities.
+                </p>
+<div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+$baseSpacing 20px
+
+$spacingUnit rem
+
+$spacingStep .25
+
+$numSpacingUnits 5
+
+$shorthand-map: (
+  "t":"top",
+  "b":"bottom",
+  "r":"right",
+  "l":"left",
+  "x":(1:"left", 2:"right"),
+  "y":(1:"top", 2:"bottom"));
+
+$property-map: ("m":"margin", "p":"padding");
+</code>
+</pre>
+</div>
+            </div>
+        </div>
     </div>
 </div>
 <script>
-    function test() {
+    function home() {
         return {
-            call() {
-                console.log(`wu-tang!`);
+            status: 'npm i ornate_css',
+            link: 'https://cdn.jsdelivr.net/npm/ornate_css@0.2.1/ornate.min.css',
+            async copyNpm() {
+                try {
+                    await navigator.clipboard.writeText(this.status);
+                    this.status = 'Copied to Clipboard!';
+                    this.timedMsg('npm');
+                } catch (e) {
+                    this.status = 'failed to copy!';
+                    this.timedMsg('npm');
+                }
+            },
+            async copyLink() {
+                try {
+                    await navigator.clipboard.writeText(this.link);
+                    this.link = 'Copied to Clipboard!';
+                    this.timedMsg('link');
+                } catch (e) {
+                    this.link = 'failed to copy!';
+                    this.timedMsg('link');
+                }
+            },
+            timedMsg(type) {
+                if (type === 'npm') {
+                    setTimeout(() => {
+                        this.status = 'npm i ornate_css';
+                    }, 3000);
+                } else if (type === 'link') {
+                    setTimeout(() => {
+                        this.link = "https://cdn.jsdelivr.net/npm/ornate_css@0.2.1/ornate.min.css";
+                    }, 3000);
+                }
             }
         }
     }

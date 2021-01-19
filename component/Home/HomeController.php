@@ -20,7 +20,6 @@ class HomeController extends Unicore{
         $this
             ->uni('Ornate')
             ->setTitle('Official Ornate CSS Documentation')
-            ->hook('header','navbar')
             ->hook('main', 'home')
             ->output();
     }

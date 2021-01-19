@@ -1,0 +1,32 @@
+<div class="grid-12 p-5 bg-dark-primary text-light-primary"
+     x-data="footer()">
+    <div class="grid-12 text-left place-x-center">
+        <h4 class="font-lg logo">
+            Thank You!
+        </h4>
+        <p>
+            Thank you for using Ornate CSS, if you have problems or would like to contribute please reach out through
+            email
+            <a href="mailto:rrivera@redbannermedia.com"
+               class="text-dark-accent hover:text-light-accent">
+                rrivera@redbannermedia.com
+            </a>
+        </p>
+        <p class="font-md">
+            OrnateCSS was created with love by
+            <a href="redbannermedia.com"
+               class="text-dark-accent hover:text-light-accent"
+               x-text="credit"
+               target="_blank">
+            </a>
+            &#169;
+        </p>
+    </div>
+</div>
+<script>
+    function footer() {
+        return {
+            credit: `Red Banner Media, LLC ${new Date().getFullYear()}`
+        }
+    }
+</script>
