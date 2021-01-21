@@ -219,7 +219,8 @@ class Render implements Renderer
         $this->html .= '<!doctype html><html lang="{{lang}}"><head>{{head}}<title>{{title}}</title></head>
                         <body x-data="hotkeys()" @keydown.Slash="$dispatch(\'custom-event\')">';
         $this->html .= '<style>{{importedStyles}}{{style}}</style>';
-        $this->html .= '<header>{{header}}</header><neoan-root></neoan-root>{{main}}<footer>{{footer}}</footer>';
+        $this->html .= '<header>{{header}}</header><neoan-root></neoan-root><div class="content-wrapper">{{main}}</div>
+                        <footer>{{footer}}</footer>';
         $this->html .= '{{importedScripts}}{{scripts}}<script>{{js}}</script>{{modules}}</body></html>';
     }
 

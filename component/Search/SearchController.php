@@ -12,7 +12,7 @@ use Neoan3\Frame\Ornate;
  */
 class SearchController extends Ornate
 {
-
+    public static array $results, $files;
     /**
      * GET: api.v1/search
      * GET: api.v1/search/{id}
@@ -26,7 +26,8 @@ class SearchController extends Ornate
         $files = scandir(path . '/component');
 
         foreach ($files as $key => $file) {
-            if ($file === '.' || $file === '..' || $file === 'Search') {
+            if ($file === '.' || $file === '..' || $file === 'Search' || $file === 'Footer'
+                || $file === 'Navbar' || $file === 'NotFound') {
                 unset($files[$key]);
             }
             $finalKey = array_search($body, $files);

@@ -2,6 +2,7 @@
 
 namespace Neoan3\Component\Layout;
 
+use Neoan3\Component\Documentation\DocumentationController;
 use Neoan3\Core\Unicore;
 
 /**
@@ -19,7 +20,9 @@ class LayoutController extends Unicore{
     {
         $this
             ->uni('Ornate')
-            ->hook('main', 'layout')
+            ->hook('main',
+                'layout',
+                ['links' => DocumentationController::linkCreator()])
             ->output();
     }
 

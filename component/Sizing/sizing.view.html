@@ -1,8 +1,95 @@
-<div class="container">
-    <h1 class="font-lg">Sizing</h1>
-    <p class="text-primary">You can find this view in /component/Sizing/sizing.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Sizing
+            </h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <p class="text-center">Although you can size the majority of content with the grid system, there
+                    occasionally a need
+                    for precision Sizing comes in one of two flavors:</p>
+                <p class="font-lg logo">
+                    1. Percentage
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning m-y-4">
+<pre>
+<code>
+.w-25p
+.w-50p
+.w-75p
+.w-100p
+</code>
+</pre>
+                </div>
+                <div class="grid-4-4-4 p-5 grid-12 bg-primary b-rounded text-white">
+                    <div class="b-rounded bg-gray p-3 m-y-3 w-25p">.w-25p</div>
+                    <div class="b-rounded bg-gray p-3 m-y-3 w-50p">.w-50p</div>
+                    <div class="b-rounded bg-gray p-3 m-y-3 w-75p">.w-75p</div>
+                </div>
+                <p class="font-lg logo">
+                    1. REM Unit
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning m-y-4">
+<pre>
+<code>
+.h //height
+.w //width
+  //example
+.h-10
+
+$height-width-scale: (
+  0: 0px,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  11: 2.75rem,
+  12: 3rem,
+  14: 3.5rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  28: 7rem,
+  32: 8rem,
+  36: 9rem,
+  40: 10rem,
+  44: 11rem,
+  48: 12rem,
+  52: 13rem,
+  56: 14rem,
+  60: 15rem,
+  64: 16rem,
+  72: 18rem,
+  80: 20rem,
+  96: 24rem,
+  auto: auto
+);
+</code>
+</pre>
+                </div>
+
+                <div class="grid-3-3-3-3 bg-light-primary m-y-5 b-rounded">
+                    <div class="m-3 h-8 b-rounded bg-primary"></div>
+                    <div class="m-3 h-12 b-rounded bg-primary"></div>
+                    <div class="m-3 h-16 b-rounded bg-primary"></div>
+                    <div class="m-3 h-24 b-rounded bg-primary"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

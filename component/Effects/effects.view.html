@@ -1,8 +1,173 @@
-<div class="container">
-    <h1 class="font-lg">Effects</h1>
-    <p class="text-primary">You can find this view in /component/Effects/effects.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">Ornate Effects</h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <p class="text-center">
+                    Ornate Effects are nice-to-have dashed utilities classes that add quality of life styles.
+                </p>
+                <div class="m-y-3">
+                    <h3 class="font-xl text-dark-primary text-center logo m-y-3">Shadowing</h3>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.raise-1-[color]
+.raise-2-black
+.raise-3-primary
+</code>
+</pre>
+                    </div>
+                    <div class="grid-3-3-3-3">
+                        <div class="raise-1-black m-3 p-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, animi cupiditate
+                            doloremque
+                            excepturi
+                            facilis in iste, itaque modi nihil non odio quam quia quis rerum suscipit, tempore unde
+                            veniam.
+                            Doloremque!
+                        </div>
+                        <div class="raise-2-primary m-3 p-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti distinctio
+                            dolorum
+                            expedita
+                            fuga maxime praesentium, quasi quis sed sequi tempore vel? Ad enim eum fuga nulla sequi sint
+                            voluptatem!
+                        </div>
+                        <div class="raise-3-accent m-3 p-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis earum eveniet
+                            inventore
+                            officia quod vel veritatis! Accusamus, cupiditate deserunt ducimus expedita reprehenderit
+                            sapiente
+                            sint.
+                            Culpa et expedita reprehenderit sit.
+                        </div>
+                        <div class="raise-3-warning m-3 p-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, beatae consectetur
+                            dicta
+                            doloremque
+                            eaque, expedita ipsum iste labore minus molestiae mollitia non odio quam quasi, ratione
+                            repellendus
+                            repudiandae rerum voluptatem!
+                        </div>
+                    </div>
+
+                </div>
+                <div class="m-y-3">
+                    <h3 class="font-xl text-dark-primary text-center logo m-y-3">Opacity</h3>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.opacity-25 // 0.25
+.opacity-50 // 0.50
+.opacity-75 // 0.75
+.opacity-100 // 1
+</code>
+</pre>
+                    </div>
+                    <div class="grid-3-3-3-3 p-4">
+                        <div class="opacity-25 bg-gray m-4 p-2 b-rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores assumenda
+                            culpa
+                            dignissimos doloremque eligendi et expedita illo, laboriosam maxime nam nisi pariatur quam
+                            reprehenderit
+                            sint suscipit vel vitae voluptate.
+                        </div>
+                        <div class="opacity-50 bg-gray m-4 p-2 b-rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eos exercitationem facilis
+                            magnam
+                            qui
+                            repellendus veniam! Consequatur, doloremque, error excepturi facere illo, laboriosam magnam
+                            necessitatibus rem sapiente similique sint tempore.
+                        </div>
+                        <div class="opacity-75 bg-gray m-4 p-2 b-rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab ad blanditiis debitis dolor
+                            doloribus
+                            excepturi maiores quos repellat ut. Accusantium asperiores culpa dolorum expedita incidunt
+                            itaque
+                            quis
+                            sed totam?
+                        </div>
+                        <div class="opacity-100 bg-gray m-4 p-2 b-rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores aspernatur at
+                            consectetur
+                            consequatur consequuntur debitis distinctio dolorem ducimus laboriosam magnam, magni minima
+                            quaerat
+                            quia
+                            ratione suscipit tempora voluptatem voluptatum?
+                        </div>
+                    </div>
+                </div>
+                <div class="m-y-3">
+                    <h3 class="font-xl text-dark-primary text-center logo m-y-3">Cursor</h3>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.cursor-auto
+.cursor-default
+.cursor-pointer
+.cursor-wait
+.cursor-text
+.cursor-move
+.cursor-not-allowed
+</code>
+</pre>
+                    </div>
+                    <div class="grid-4-4-4">
+            <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-auto">
+                cursor-auto</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-default">
+                cursor-default</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-pointer">
+                cursor-pointer</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-wait">
+                cursor-wait</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-text">
+                cursor-text</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-move">
+                cursor-move</span>
+                        <span class="p-3 m-3 bg-success text-white raise-1-gray
+                         b-rounded cursor-not-allowed">
+                cursor-not-allowed</span>
+                    </div>
+
+                </div>
+
+                <div class="m-y-3">
+                    <h3 class="font-xl text-dark-primary text-center logo m-y-3">User-select</h3>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.select-none
+.select-text
+.select-all
+.select-auto
+</code>
+</pre>
+                    </div>
+                    <div class="grid-3-3-3-3 m-y-3">
+                        <span class="p-3 m-3 bg-dark-primary select-none b-rounded text-white">.select-none</span>
+                        <span class="p-3 m-3 bg-dark-primary select-text b-rounded text-white">.select-text</span>
+                        <span class="p-3 m-3 bg-dark-primary select-all b-rounded text-white">.select-all</span>
+                        <span class="p-3 m-3 bg-dark-primary select-auto b-rounded text-white">.select-auto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

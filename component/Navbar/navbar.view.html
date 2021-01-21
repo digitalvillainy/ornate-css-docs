@@ -2,7 +2,7 @@
      x-data="navBar()">
     <span class="font-md p-y-2 p-l-2 place-y-center"
           @custom-event.window="toggleSearch(); $nextTick(()=>{ $refs.search.focus(); });">
-        <a href="/"
+        <a href="./"
            class="text-white logo font-lg hover:text-accent">
             Ornate CSS
         </a>
@@ -25,10 +25,10 @@
                     <div class="bg-light-primary text-dark-primary w-100p p-2 b-rounded
                                  raise-1-gray hover:bg-white hover:text-accent"
                          id="results"
-                          x-ref="results"
-                          x-show="results.length > 0"
-                          @click="goToTarget"
-                          x-text="results"></div>
+                         x-ref="results"
+                         x-show="results.length > 0"
+                         @click="goToTarget"
+                         x-text="results"></div>
                 </div>
                 <span class="text-light-primary place-y-center place-x-end "
                       x-show="!open">
@@ -48,19 +48,29 @@
         </div>
 
         <div class="text-grey p-x-2 place-y-center">
-            <div class="hover:bg-gray b-rounded p-3 cursor-pointer place-x-start">
-                <a href="/documentation"
-                   class="text-light-primary place-y-center place-x-start hover:text-accent">
+            <a href="./documentation">
+                <div class="hover:bg-gray b-rounded p-3 cursor-pointer place-x-start text-light-primary place-y-center
+                        place-x-start hover:text-accent">
                     Documentation
-                </a>
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     class="fill-svg text-light-primary h-3 w-3"
-                     viewBox="0 0 20 20">
-                    <path d="M6 4H5a1 1 0 1 1 0-2h11V1a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="fill-svg text-light-primary h-3 w-3"
+                         viewBox="0 0 20 20">
+                        <path d="M6 4H5a1 1 0 1 1 0-2h11V1a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0
                 2-2V5a1 1 0 0 0-1-1h-7v8l-2-2-2 2V4z"/>
-                </svg>
-            </div>
+                    </svg>
+                </div>
+            </a>
         </div>
+    </div>
+    <div class="grid-12 up-top z-10"
+         @click="toTheTop">
+        <button class="btn-fab-success place-x-end place-y-center cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="fill-svg text-white h-5 w-5"
+                 viewBox="0 0 20 20">
+                <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+            </svg>
+        </button>
     </div>
 </div>
 <script>
@@ -71,13 +81,14 @@
             results: '',
             toggleSearch() {
                 this.open = !this.open;
+                this.toTheTop();
             },
             search(e) {
                 let target = e.target.value;
                 let location;
                 api.get(`/search/${target}`)
                     .then((res) => {
-                        location = res.data !== 'failed' ? this.results = res.data : this.results = 'No Results...';
+                        location = res.data.err !== 'failed' ? this.results = res.data : this.results = 'No Results...';
                     })
                     .catch((err) => {
                         console.error(err);
@@ -88,19 +99,30 @@
                 e.target.value = '';
             },
             goToTarget() {
-                if(this.results !== 'No Results...'){
+                if (this.results !== 'No Results...') {
                     window.location = `./${this.results.toLowerCase()}`;
                 }
             },
-            selectResults(){
+            selectResults() {
                 let selectedClasses = ['bg-white', 'text-accent'];
                 document.getElementById('results').classList.add(...selectedClasses);
+            },
+            toTheTop() {
+                document.documentElement.scrollTop = 0;
             }
         }
     }
+
     function hotkeys() {
         return {
-            //TODO: for body
+
         }
     }
 </script>
+<style>
+    .up-top {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+    }
+</style>

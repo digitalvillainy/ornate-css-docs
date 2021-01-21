@@ -2,6 +2,7 @@
 
 namespace Neoan3\Component\Effects;
 
+use Neoan3\Component\Documentation\DocumentationController;
 use Neoan3\Core\Unicore;
 
 /**
@@ -19,7 +20,9 @@ class EffectsController extends Unicore{
     {
         $this
             ->uni('Ornate')
-            ->hook('main', 'effects')
+            ->hook('main',
+                   'effects',
+                   ['links' => DocumentationController::linkCreator()])
             ->output();
     }
 

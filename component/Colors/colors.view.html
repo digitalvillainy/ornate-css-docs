@@ -1,8 +1,83 @@
-<div class="container">
-    <h1 class="font-lg">Colors</h1>
-    <p class="text-primary">You can find this view in /component/Colors/colors.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Colors
+            </h1>
+            <div class="text-left w-75p place-x-center grid-12">
+
+                <p class="text-center">
+                    Colors can be added to a background, borders or text.
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+/* Colors */
+$primaryColor: #3F51B5;
+$accentColor: #ff5252;
+$successColor: #4caf50;
+$warningColor: #FF9800;
+$dangerColor: #c92d2d;
+$gray: rgba(0, 0, 0, .2);
+$white: #e8e5e5;
+$black: #101010;
+
+/* Light version */
+$lightPrimaryColor: #C5CAE9;
+$lightAccentColor: #FFCDD2;
+$lightSuccessColor: #C8E6C9;
+$lightWarningColor: #FFE0B2;
+$lightDangerColor: #f44336;
+
+/* Dark version */
+$darkPrimaryColor: #303F9F;
+$darkAccentColor: #D32F2F;
+$darkSuccessColor: #388E3C;
+$darkWarningColor: #F57C00;
+$darkDangerColor: #b71c1c;
+</code>
+</pre>
+                </div>
+                <div class="grid-12">
+                    <h2 class="font-xxl logo text-dark-primary text-center m-y-3">Colors</h2>
+                    <div class="grid-4-4-4 text-white">
+                        <ul>
+                            <li class="b-rounded p-3 m-y-3 bg-primary">primary</li>
+                            <li class="b-rounded p-3 m-y-3 bg-accent">accent</li>
+                            <li class="b-rounded p-3 m-y-3 bg-success">success</li>
+                            <li class="b-rounded p-3 m-y-3 bg-warning">warning</li>
+                            <li class="b-rounded p-3 m-y-3 bg-danger">danger</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-gray">gray</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-white">white</li>
+                            <li class="b-rounded p-3 m-y-3 bg-black">black</li>
+                        </ul>
+                        <ul>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-light-primary">light-primary</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-light-accent">light-accent</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-light-success">light-success</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-light-warning">light-warning</li>
+                            <li class="b-rounded p-3 m-y-3 text-black bg-light-danger">light-danger</li>
+                        </ul>
+                        <ul>
+                            <li class="b-rounded p-3 m-y-3 bg-dark-primary">dark-primary</li>
+                            <li class="b-rounded p-3 m-y-3 bg-dark-accent">dark-accent</li>
+                            <li class="b-rounded p-3 m-y-3 bg-dark-success">dark-success</li>
+                            <li class="b-rounded p-3 m-y-3 bg-dark-warning">dark-warning</li>
+                            <li class="b-rounded p-3 m-y-3 bg-dark-danger">dark-danger</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

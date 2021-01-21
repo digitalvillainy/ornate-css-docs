@@ -1,8 +1,165 @@
-<div class="container">
-    <h1 class="font-lg">Typography</h1>
-    <p class="text-primary">You can find this view in /component/Typography/typography.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Typography
+            </h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <h3 class="font-lg text-dark-primary text-center logo m-y-3">
+                    Font Family
+                </h3>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+// font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-sans
+  // font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.font-serif
+  // font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+.font-mono
+</textarea>
+                </div>
+                <div class="bg-light-primary text-black grid-4-4-4 b-rounded p-3">
+                    <p class="text-white p-y-2 m-y-2 b-rounded bg-dark-primary font-sans">font-sans</p>
+                    <p class="text-white p-y-2 m-y-2 b-rounded bg-dark-primary font-serif">font-serif</p>
+                    <p class="text-white p-y-2 m-y-2 b-rounded bg-dark-primary font-mono">font-mono"</p>
+                </div>
+                <h3 class="font-lg text-dark-primary text-center logo m-y-3">
+                    Font Size
+                </h3>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="15"
+          disabled="true">
+.font-sm
+.font-default
+.font-md
+.font-lg
+.font-xl
+.font-xxl
+</textarea>
+                </div>
+                <div class="grid-3-3-3-3 p-3 m-y-3 bg-primary b-rounded">
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-sm">font-sm</span>
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-default">font-default</span>
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-md">font-md</span>
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-lg">font-lg</span>
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-xl">font-xl</span>
+                    <span class="bg-light-primary b-rounded p-3 m-3 font-xxl">font-xxl</span>
+                </div>
+                <h3 class="font-lg text-dark-primary text-center logo m-y-3">
+                    Text Transformation, Decorations, Overflow, Align
+                </h3>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+// Transformations
+.uppercase
+.lowercase
+.capitalize
+.normal-case
+  //Overflow
+.overflow
+.text-overflow
+.overflow-clip
+.text-decoration-none
+.truncate
+  //Align
+.text-right
+.text-center
+.text-left
+.text-justify
+</textarea>
+                </div>
+
+                <div class="grid-4-4-4 m-y-3 p-3 bg-primary b-rounded">
+                    <p class="font-lg b-rounded bg-light-primary p-3 m-3 capitalize">.capitalize</p>
+                    <p class="font-lg b-rounded bg-light-primary p-3 m-3 truncate w-75p">.truncate .truncate .truncate
+                        .truncate .truncate .truncate .truncate .truncate </p>
+                    <p class="font-lg b-rounded bg-light-primary p-3 m-3 text-center">.text-center</p>
+                </div>
+                <h3 class="font-lg text-dark-primary text-center logo m-y-3">
+                    SVG's
+                </h3>
+                <p>
+                    Much like Tailwind you can style svg's that primarily use path as it's main attribute. I suggest
+                    using <a href="http://www.zondicons.com/">zondicons</a>
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+  .fill-svg {
+  fill: currentColor;
+}
+
+.stroke-svg {
+  stroke: currentColor;
+}
+
+// TO color  after using either fill-svg or stroke-svg use text coloring
+.fill-svg .text-primary
+</textarea>
+                </div>
+
+                <div class="grid-4-4-4 bg-light-primary m-b-5">
+                    <div class="b-rounded m-4 bg-white place-y-center place-x-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-success h-4 w-4"
+                             viewBox="0 0 20 20 ">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </div>
+
+                    <div class="b-rounded m-4 bg-white place-y-center place-x-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-dark-accent h-4 w-4"
+                             viewBox="0 0 20 20 ">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </div>
+
+
+                    <div class="b-rounded m-4 bg-white place-y-center place-x-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-warning h-4 w-4"
+                             viewBox="0 0 20 20 ">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </div>
+
+                    <div class="b-rounded m-4 bg-white place-y-center place-x-center p-5">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-black h-4 w-4"
+                             viewBox="0 0 20 20 ">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

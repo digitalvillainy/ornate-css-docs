@@ -1,8 +1,86 @@
-<div class="container">
-    <h1 class="font-lg">Layout</h1>
-    <p class="text-primary">You can find this view in /component/Layout/layout.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+
+            <h1 class="font-xxl text-dark-primary text-center logo">Layouts</h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <div class="grid-12 m-y-3">
+                    <h3 class="font-xxl text-dark-primary text-center logo">Container</h3>
+                    <p class="text-left">Container sets an element for setting the width to 100% and centering.</p>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.container {
+  max-width: calc(100% - 20px);
+  margin: $baseSpacing auto;
+}
+</code>
+</pre>
+                    </div>
+
+                </div>
+                <div class="grid-12 m-y-3">
+                    <h3 class="font-xxl text-dark-primary text-center logo">Visibility</h3>
+
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+// Display: none
+.hide
+  // Display: block
+.display
+</code>
+</pre>
+                    </div>
+
+                </div>
+                <div class="grid-12 m-y-3">
+                    <h3 class="font-xxl text-dark-primary text-center logo">Z-Index</h3>
+
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+/* Z-Index */
+$z-index-map: (
+  "0":0,
+  "10":10,
+  "20":20,
+  "30":30,
+  "40":40,
+  "50":50,
+  "auto":"auto"
+);
+
+.z-0
+.z-10
+.z-20
+.z-30
+.z-40
+.z-50
+.z-auto
+</code>
+</pre>
+                    </div>
+                    <div class="grid-3-3-3-3 bg-dark-primary b-rounded">
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-0">z-0</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-10">z-10</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-20">z-20</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-30">z-30</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-40">z-40</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-50">z-50</div>
+                        <div class="bg-white b-rounded text-center p-2 m-3 z-auto">z-auto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

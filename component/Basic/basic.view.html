@@ -1,8 +1,267 @@
-<div class="container">
-    <h1 class="font-lg">Basic</h1>
-    <p class="text-primary">You can find this view in /component/Basic/basic.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Basic Usage
+            </h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <p>
+                    Built directly into OrnateCSS is normalize.css, a css file that essentially resets a browsers default
+                    styling and forces uniformity for reliable consistency when styling your site.
+
+                    Normalize is definitely the recommended css reset of its kind. Regardless, use whatever you like as long
+                    as
+                    you have a reset of some sort.
+                </p>
+                <p>
+                    Ornate has a plethora of utility classes. The majority of which follow this simple formula for ease of
+                    memorization:
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+//name of property - side -unit number
+
+// border - bottom - 1px - solid
+.b-b-1-solid
+  // margin - top - 1em
+.m-t-1
+  // margin - top & bottom - 1em
+.m-y-1
+</code>
+</pre>
+                </div>
+
+                <p>
+                    As you see, when setting properties you can choose which side to affect.
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+// Affect the entire border
+// border - 1px - solid
+.b-1-solid
+  // margin - 3em
+.m-3
+  // Y axis e.g.: top and bottom
+.m-y-2
+  // X axis e.g.: left and right
+.m-x-2
+</code>
+</pre>
+                </div>
+                <p>
+                    One can even review the above and notice a pattern when wit comes to declaring properties. Knowing
+                    that "m" stands for margin, you can then assume tha "p" stands for padding.
+                </p>
+
+                <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                    The Grid System
+                </h1>
+                <p>
+                    Being powered by
+                    <a href="https://gaudiamus-css.github.io/"
+                       class="hover:text-dark-accent text-accent">
+                        Gaudiamus,
+                    </a> Ornate also uses CSS Grid. The grid system is now easier to implement.
+                </p>
+                <p>
+                    By default, we use the common 12-grid.
+                </p>
+
+                <div class="box-low-dark-warning bg-black text-warning">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="10"
+              disabled="true">
+<div class="grid-4-4-4">
+  <div>child1</div>
+  <div>child2</div>
+  <div>child3</div>
+</div>
+    </textarea>
+                </div>
+
+                <p class="text-dark-primary">
+                    Which renders out like below (color has been added to make it easier to know what's happening):
+                </p>
+                <div class="grid-4-4-4 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child1</div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child2</div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child3</div>
+                </div>
+                <p>
+                    Any Combination is possible:
+                </p>
+
+                <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-7-5">
+  <div>
+    <div class="grid-6-6">
+      <div>one-1</div>
+      <div>one-2</div>
+    </div>
+  </div>
+  <div>two</div>
+</div>
+</textarea>
+                </div>
+
+                <p class="text-dark-primary">
+                    Which renders out like below (color has been added to make it easier to know what's happening):
+                </p>
+                <div class="grid-7-5 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                    <div>
+                        <div class="grid-6-6 bg-white b-rounded m-x-4 p-2">
+                            <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child-1</div>
+                            <div class="bg-dark-primary b-rounded m-x-2 p-y-2">child-2</div>
+                        </div>
+                    </div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-center">
+                        two
+                    </div>
+                </div>
+
+                <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                    Placement
+                </h1>
+                <p>
+                    You can place elements on the x and y-axis of the grid-area with ease:
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-3-3-3-3">
+  <span class="place-x-center">1</span>
+  <span class="place-x-end">2</span>
+  <span class="place-y-start">3</span>
+  <span class="place-y-stretch">4</span>
+</div>
+</textarea>
+                </div>
+                <p class="text-dark-primary">
+                    Which renders out like below (color has been added to make it easier to know what's happening):
+                </p>
+
+                <div class="grid-3-3-3-3 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                    <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-x-center">1</span>
+                    <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-x-end">2</span>
+                    <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-start">3</span>
+                    <span class="bg-dark-primary b-rounded m-x-2 p-y-2 place-y-stretch">4</span>
+                </div>
+
+                <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                    Responsiveness
+                </h1>
+                <p>
+                    What about breakpoints? We use a markup similar to tailwind css to tackle this. However, now the grid
+                    really starts to make the difference. Finally, you will have an overview of your breakpoints. Start with
+                    mobile and go up: (here is makes sense to play around with your window-size if you can)
+                </p>
+
+                <span>
+                "xs": 320px, "sm": 425px, "md": 768px, "lg": 1024px, "xl": 1440px, "xxl": 2560px, "xxxl":3440px
+            </span>
+
+                <div class="box-low-dark-warning bg-black text-warning">
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="10"
+          disabled="true">
+<div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+</textarea>
+                </div>
+                <p class="text-dark-primary">
+                    Which renders out like below (color has been added to make it easier to know what's happening):
+                </p>
+                <div class="grid-12
+                        md:grid-6-6
+                        lg:grid-3-3-3-3 bg-gray text-light-primary m-x-4 p-2 text-center b-rounded">
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">1</div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">2</div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">3</div>
+                    <div class="bg-dark-primary b-rounded m-x-2 p-y-2">4</div>
+                </div>
+
+                <p>
+                    Responsiveness in Ornate allows you to adhoc allow different pre-built classes to be active at different
+                    breakpoints.
+                </p>
+
+                <h1 class="font-xxl text-dark-primary text-center logo m-y-5">
+                    Pre-Built Utility Classes
+                </h1>
+                <div class="text-left m-t-5">
+                <span>
+                    There are two types of Utilities:
+                </span>
+                    <ul>
+                        <li>1. Dashed Utilities</li>
+                        <li class="p-y-2">
+                            The most common and typically in the following format: .m-t-2
+                        </li>
+                        <li>2. Colon Utilities</li>
+                        <li class="p-y-2">
+                            Represent a condition that is met before being used. An example of this would be responsive
+                            utilities: "xs:", "sm:" , "md:", "lg:", "xl:", "xxl:", "xxxl:"
+                        </li>
+                        <li>
+                            Meanwhile, the others represent a specific state. Such as focus, hover, and active.
+                        </li>
+                    </ul>
+
+                    <p>
+                        In addition, there are default values that help support all the utilities.
+                    </p>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+$baseSpacing 20px
+
+$spacingUnit rem
+
+$spacingStep .25
+
+$numSpacingUnits 5
+
+$shorthand-map: (
+  "t":"top",
+  "b":"bottom",
+  "r":"right",
+  "l":"left",
+  "x":(1:"left", 2:"right"),
+  "y":(1:"top", 2:"bottom"));
+
+$property-map: ("m":"margin", "p":"padding");
+</code>
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

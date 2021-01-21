@@ -1,8 +1,117 @@
-<div class="container">
-    <h1 class="font-lg">Borders</h1>
-    <p class="text-primary">You can find this view in /component/Borders/borders.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+            <h1 class="font-xxl logo text-center text-dark-primary m-y-4z">Borders</h1>
+            <div class="text-left w-75p place-x-center grid-12">
+
+                <p class="text-center">
+                    Borders have a similar format to other dashed utilities, but with some slight variances so commands
+                    stay
+                    short
+                    in length.
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<pre>
+<code>
+// rounds the corners of a border
+.b-rounded
+  // border - px line width - border style
+.b-1-solid // Outputs border with a solid 1px width
+  // You can even determine what border sides
+.b-b-1-solid // Outputs border with a solid 1px width that is on the bottom
+  // In order to color a border you can simply use the following syntax
+  // with any color:
+.b-black
+</code>
+</pre>
+                </div>
+                <h1 class="font-xxl logo text-dark-primary text-center m-y-4">Examples</h1>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<pre>
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+    <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+        <div class="b-1-solid b-black p-2 m-2">example-1</div>
+        <div class="b-2-solid b-primary p-2 m-2">example-2</div>
+        <div class="b-3-solid b-light-accent p-2 m-2">example-3</div>
+        <div class="b-4-solid b-success p-2 m-2">example-4</div>
+    </div>
+</textarea>
+</pre>
+                </div>
+                <p class="m-y-4 p-y-3">
+                    Which will output the following:
+                </p>
+                <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+                    <div class="b-1-solid b-black p-2 m-2">example-1</div>
+                    <div class="b-2-solid b-primary p-2 m-2">example-2</div>
+                    <div class="b-3-solid b-light-accent p-2 m-2">example-3</div>
+                    <div class="b-4-solid b-success p-2 m-2">example-4</div>
+                </div>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<pre>
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+    <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+        <div class="b-rounded b-1-solid b-black p-2 m-2">example-1</div>
+        <div class="b-rounded b-2-solid b-primary p-2 m-2">example-2</div>
+        <div class="b-rounded b-3-solid b-light-accent p-2 m-2">example-3</div>
+        <div class="b-rounded b-4-solid b-success p-2 m-2">example-4</div>
+    </div>
+</textarea>
+</pre>
+                </div>
+                <p class="m-y-4 p-y-3">
+                    Which will output the following:
+                </p>
+                <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+                    <div class="b-rounded b-1-solid b-black p-2 m-2">example-1</div>
+                    <div class="b-rounded b-2-solid b-primary p-2 m-2">example-2</div>
+                    <div class="b-rounded b-3-solid b-light-accent p-2 m-2">example-3</div>
+                    <div class="b-rounded b-4-solid b-success p-2 m-2">example-4</div>
+                </div>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+<pre>
+<textarea cols="30"
+          class="bg-black text-warning b-none"
+          style="resize: none"
+          rows="20"
+          disabled="true">
+    <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+        <div class="b-1-wave b-black p-2 m-2">example-1</div>
+        <div class="b-2-double b-primary p-2 m-2">example-2</div>
+        <div class="b-3-dotted b-light-accent p-2 m-2">example-3</div>
+        <div class="b-4-dashed b-success p-2 m-2">example-4</div>
+    </div>
+</textarea>
+</pre>
+                </div>
+                <p class="m-y-4 p-y-3">
+                    Which will output the following:
+                </p>
+                <div class="grid-3-3-3-3 bg-gray text-center text-dark-primary m-y-2">
+                    <div class="b-1-wave b-black p-2 m-2">example-1</div>
+                    <div class="b-2-double b-primary p-2 m-2">example-2</div>
+                    <div class="b-3-dotted b-light-accent p-2 m-2">example-3</div>
+                    <div class="b-4-dashed b-success p-2 m-2">example-4</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

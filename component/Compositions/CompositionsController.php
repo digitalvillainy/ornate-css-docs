@@ -2,6 +2,7 @@
 
 namespace Neoan3\Component\Compositions;
 
+use Neoan3\Component\Documentation\DocumentationController;
 use Neoan3\Core\Unicore;
 
 /**
@@ -19,7 +20,9 @@ class CompositionsController extends Unicore{
     {
         $this
             ->uni('Ornate')
-            ->hook('main', 'compositions')
+            ->hook('main',
+                   'compositions',
+                ['links' => DocumentationController::linkCreator()])
             ->output();
     }
 

@@ -1,8 +1,620 @@
-<div class="container">
-    <h1 class="font-lg">Compositions</h1>
-    <p class="text-primary">You can find this view in /component/Compositions/compositions.view.html</p>
-    <div class="m-t-5 p-4 b-rounded b-1 b-primary">
-        <h3 class="text-secondary font-default">Did you know?</h3>
-        <custom-element>That you can build hybrid applications with neoan3, where neoan3 serves a javascript frontend? </custom-element>
+<div class="grid-12">
+    <div class="grid-2-10">
+        <div class="bg-primary grid-12">
+            <a n-for="links as link"
+               href="./{{link}}">
+                <div class="hover:bg-gray m-y-2 p-2 uppercase cursor-pointer
+                            hover:raise-1-gray text-white hover:text-accent">
+                    {{link}}
+                </div>
+            </a>
+        </div>
+        <div class="grid-12 m-t-5">
+
+            <h1 class="font-xxl text-dark-primary text-center logo m-y-3">
+                Compositions
+            </h1>
+            <div class="text-left w-75p place-x-center grid-12">
+                <p class="m-y-3">
+                    As the name alludes to, compositions are pre-made classes made to style commonly used elements.
+                    These
+                    compositions combine dashed utilities to speed up development.
+                </p>
+                <h3 class="font-xl text-dark-primary text-center logo m-y-3">
+                    Box
+                </h3>
+                <p class="m-y-3">
+                    Box is a simple class that wraps the element in a borderless container. The said container has a
+                    drop
+                    shadow.
+                    While you'll typically add the color yourself, it will only color the drop shadow as they do lack a
+                    background
+                    color.
+                </p>
+                <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+// box - level - color
+.box-low-primary
+.box-med-primary
+.box-low-primary
+</code>
+</pre>
+                </div>
+                <div class="grid-4-4-4">
+                    <div class="box-low-primary m-3">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias cumque dolores dolorum
+                            ducimus
+                            eaque
+                            error inventore ipsa iure laborum laudantium, necessitatibus numquam officia perferendis
+                            qui,
+                            sequi
+                            ullam, unde voluptatum?
+                        </div>
+                        <div>Accusamus assumenda atque beatae blanditiis consequuntur culpa cumque debitis delectus
+                            dolor
+                            dolorum,
+                            est ipsum laboriosam libero minima minus molestiae neque non officiis optio praesentium quod
+                            repudiandae
+                            saepe sapiente sed tempora.
+                        </div>
+                    </div>
+                    <div class="box-med-primary m-3">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias cumque dolores dolorum
+                            ducimus
+                            eaque
+                            error inventore ipsa iure laborum laudantium, necessitatibus numquam officia perferendis
+                            qui,
+                            sequi
+                            ullam, unde voluptatum?
+                        </div>
+                        <div>Accusamus assumenda atque beatae blanditiis consequuntur culpa cumque debitis delectus
+                            dolor
+                            dolorum,
+                            est ipsum laboriosam libero minima minus molestiae neque non officiis optio praesentium quod
+                            repudiandae
+                            saepe sapiente sed tempora.
+                        </div>
+                    </div>
+                    <div class="box-high-primary m-3">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias cumque dolores dolorum
+                            ducimus
+                            eaque
+                            error inventore ipsa iure laborum laudantium, necessitatibus numquam officia perferendis
+                            qui,
+                            sequi
+                            ullam, unde voluptatum?
+                        </div>
+                        <div>Accusamus assumenda atque beatae blanditiis consequuntur culpa cumque debitis delectus
+                            dolor
+                            dolorum,
+                            est ipsum laboriosam libero minima minus molestiae neque non officiis optio praesentium quod
+                            repudiandae
+                            saepe sapiente sed tempora.
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="font-xl text-dark-primary text-center logo m-y-3">
+                    Buttons
+                </h3>
+                <p class="m-y-3">
+                    Buttons Primarily comes in three types:
+                </p>
+                <ul>
+                    <li>1. Regular</li>
+                    <li>2. Fab</li>
+                    <li>3. Line</li>
+                </ul>
+                <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.btn {
+  @extend .b-rounded, .font-md, .b-gray, .b-1-solid, .uppercase, .m-2,
+    .cursor-pointer, .font-sans, .font-strong;
+  // .btn-[color] is a flat button tha is colored.
+  // btn - color
+  .btn-primary
+}
+
+// btn - line - color
+.btn-line-primary
+</code>
+</pre>
+                </div>
+                <h4 class="font-lg text-dark-primary text-center logo m-y-3">Example</h4>
+
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="15"
+              disabled="true">
+    <div class="grid-3-3-3-3">
+        <button class="btn">example</button>
+        <button class="btn-primary">example</button>
+        <button class="btn-accent">example</button>
+        <button class="btn-success">example</button>
+    </div>
+    </textarea>
+                </div>
+                <div class="grid-3-3-3-3">
+                    <button class="btn">example</button>
+                    <button class="btn-primary">example</button>
+                    <button class="btn-accent">example</button>
+                    <button class="btn-success">example</button>
+                </div>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="60"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="30"
+              disabled="true">
+<button class="btn-fab">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="fill-svg text-black h-3 w-4"
+                 viewBox="0 0 20 20">
+                <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+            </svg>
+        </button>
+        <button class="btn-fab-primary">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="fill-svg text-black h-3 w-4"
+                 viewBox="0 0 20 20">
+                <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+            </svg>
+        </button>
+        <button class="btn-fab-accent">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="fill-svg text-black h-3 w-4"
+                 viewBox="0 0 20 20">
+                <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+            </svg>
+        </button>
+        <button class="btn-fab-success">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="fill-svg text-black h-3 w-4"
+                 viewBox="0 0 20 20">
+                <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+            </svg>
+        </button>
+    </textarea>
+                </div>
+                <div class="grid-3-3-3-3">
+                    <button class="btn-fab place-y-center">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-black h-3 w-4"
+                             viewBox="0 0 20 20">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-fab-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-black h-3 w-4"
+                             viewBox="0 0 20 20">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-fab-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-black h-3 w-4"
+                             viewBox="0 0 20 20">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-fab-success">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="fill-svg text-black h-3 w-4"
+                             viewBox="0 0 20 20">
+                            <path d="M7 10v8h6v-8h5l-8-8-8 8h5z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="15"
+              disabled="true">
+    <div class="grid-3-3-3-3">
+        <button class="p-y-2 m-3 btn-round">example</button>
+        <button class="p-y-2 m-3 btn-round-primary">example</button>
+        <button class="p-y-2 m-3 btn-round-accent">example</button>
+        <button class="p-y-2 m-3 btn-round-success">example</button>
+    </div>
+    </textarea>
+                </div>
+                <div class="grid-3-3-3-3">
+                    <button class="p-y-2 m-3 btn-round">example</button>
+                    <button class="p-y-2 m-3 btn-round-primary">example</button>
+                    <button class="p-y-2 m-3 btn-round-accent">example</button>
+                    <button class="p-y-2 m-3 btn-round-success">example</button>
+                </div>
+                <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="15"
+              disabled="true">
+    <div class="grid-3-3-3-3">
+        <button class="p-y-2 m-3 btn-round">example</button>
+        <button class="p-y-2 m-3 btn-round-primary">example</button>
+        <button class="p-y-2 m-3 btn-round-accent">example</button>
+        <button class="p-y-2 m-3 btn-round-success">example</button>
+    </div>
+    </textarea>
+                </div>
+                <div class="grid-3-3-3-3">
+                    <button class="p-y-2 m-3 btn-round-line-primary">example</button>
+                    <button class="p-y-2 m-3 btn-round-line-accent">example</button>
+                    <button class="p-y-2 m-3 btn-round-line-success">example</button>
+                    <button class="p-y-2 m-3 btn-round-line-warning">example</button>
+                </div>
+                <div class="grid-12">
+                    <h3 class="font-xl text-center">Input Forms</h3>
+                    <p>
+                        Label styling is very simple, but try and maintain an eye-catching visual presence
+                    </p>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+  .label {
+  @extend .font-strong, .font-sans;
+}
+</code>
+</pre>
+                    </div>
+
+                    <h3 class="font-xl text-center">
+                        Input
+                    </h3>
+                    <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+.input {
+  @extend .b-rounded, .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+  .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+  .focus\:raise-1-gray, .p-x-1;
+}
+// input - color
+.input-primary
+
+.input-rounded {
+  border-radius: 16px;
+  @extend .b-b-1-solid, .b-gray, .bg-gray, .opacity-75, .b-l-none, .b-r-none, .b-t-none,
+  .focus\:b-b-2-solid, .focus\:b-black, .bg-white, .font-sans, .m-y-2, .p-t-2,
+  .focus\:raise-1-gray, .p-x-2;
+}
+
+// input - rounded - color
+.input-rounded-primary
+</code>
+</pre>
+                    </div>
+                    <div class="grid-12">
+
+                        <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="30"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="15"
+              disabled="true">
+<div class="grid-3-3-3-3 m-3">
+    <input type="text"
+           class="input m-2"
+           value="Example">
+    <input type="text"
+           class="input-primary m-2"
+           value="Example">
+    <input type="text"
+           class="input-accent m-2"
+           value="Example">
+    <input type="text"
+           class="input-warning m-2"
+           value="Example">
+</div>
+    </textarea>
+                        </div>
+                        <div class="grid-3-3-3-3 m-3">
+                            <input type="text"
+                                   class="input m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-primary m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-accent m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-warning m-2"
+                                   value="Example">
+                        </div>
+                    </div>
+                    <div class="grid-12">
+
+                        <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="35"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="17"
+              disabled="true">
+<div class="grid-3-3-3-3 m-3">
+    <input type="text"
+           class="input-rounded m-2"
+           value="Example">
+    <input type="text"
+           class="input-rounded-primary m-2"
+           value="Example">
+    <input type="text"
+           class="input-rounded-accent m-2"
+           value="Example">
+    <input type="text"
+           class="input-rounded-warning m-2"
+           value="Example">
+</div>
+    </textarea>
+                        </div>
+                        <div class="grid-3-3-3-3 m-3">
+                            <input type="text"
+                                   class="input-rounded m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-primary m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-accent m-2"
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-warning m-2"
+                                   value="Example">
+                        </div>
+                    </div>
+                    <h3 class="text-center font-xl">
+                        Input & Textarea Disabled/ read-only
+                    </h3>
+                    <div class="grid-12">
+                        <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="40"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="20"
+              disabled="true">
+            <div class="grid-3-3-3-3 m-3">
+                <input type="text"
+                       class="input-rounded m-2"
+                       disabled
+                       value="Example">
+                <input type="text"
+                       class="input-rounded-primary m-2"
+                       disabled
+                       value="Example">
+                <input type="text"
+                       class="input-rounded-accent m-2"
+                       disabled
+                       value="Example">
+                <input type="text"
+                       class="input-rounded-warning m-2"
+                       disabled
+                       value="Example">
+            </div>
+    </textarea>
+                        </div>
+                        <div class="grid-3-3-3-3 m-3">
+                            <input type="text"
+                                   class="input-rounded m-2"
+                                   disabled
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-primary m-2"
+                                   disabled
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-accent m-2"
+                                   disabled
+                                   value="Example">
+                            <input type="text"
+                                   class="input-rounded-warning m-2"
+                                   disabled
+                                   value="Example">
+                        </div>
+                    </div>
+                    <h3 class="text-center font-xl">Textarea</h3>
+                    <div class="grid-12">
+                        <div class="box-low-dark-warning bg-black text-warning m-y-3">
+                <pre>
+    <code>
+&#60;textarea cols="30"
+              rows="10"
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              class="textarea m-3"&#62;&#60;/textarea&#62;
+&#60;textarea cols="30"
+              rows="10"
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              class="textarea-primary m-3"&#62;&#60;/textarea&#62;
+&#60;textarea cols="30"
+              rows="10"
+              placeholder=""Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              class="textarea-accent m-3"&#62;&#60;/textarea&#62;
+&#60;textarea cols="30"
+              rows="10"
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              class="textarea-warning m-3"&#62;&#60;/textarea&#62;
+    </code>
+                    </pre>
+                        </div>
+
+                        <div class="grid-3-3-3-3">
+                <textarea cols="30"
+                          rows="10"
+                          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua."
+                          class="textarea m-3"></textarea>
+                            <textarea cols="30"
+                                      rows="10"
+                                      placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                      class="textarea-primary m-3"></textarea>
+                            <textarea cols="30"
+                                      rows="10"
+                                      placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                      class="textarea-accent m-3"></textarea>
+                            <textarea cols="30"
+                                      rows="10"
+                                      placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                      class="textarea-warning m-3"></textarea>
+                        </div>
+                    </div>
+                    <div class="grid-12">
+                        <h3 class="font-xl text-center logo">
+                            Drop-down/Select
+                        </h3>
+                        <div class="box-low-dark-warning bg-black text-warning">
+<pre>
+<code>
+    .select {
+  @extend .bg-white, .font-sans, .b-rounded;
+
+  option:nth-child(2n+1) {
+    @extend .bg-white, .opacity-50;
+  }
+}
+
+// select - color
+.select-primary
+
+.select-alt {
+  @extend .b-white, .b-1-solid, .opacity-75, .font-sans, .b-rounded;
+}
+
+// select - alt - primary
+.select-alt-primary
+</code>
+</pre>
+                        </div>
+                        <div class="box-low-dark-warning bg-black text-warning m-y-3">
+    <textarea cols="50"
+              class="bg-black text-warning b-none"
+              style="resize: none"
+              rows="55"
+              disabled="true">
+<div class="grid-6-6">
+    <div class="grid-3-3-3-3">
+        <select  class="select m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-primary m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-accent m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-warning m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+    </div>
+    <div class="grid-3-3-3-3">
+        <select  class="select-alt m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-alt-primary m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-alt-accent m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+        <select  class="select-alt-warning m-3">
+            <option value="example-1">example-1</option>
+            <option value="example-2">example-2</option>
+            <option value="example-3">example-3</option>
+            <option value="example-4">example-4</option>
+        </select>
+    </div>
+</div>
+    </textarea>
+                        </div>
+                        <div class="grid-6-6">
+                            <div class="grid-3-3-3-3">
+                                <select class="select m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-primary m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-accent m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-warning m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                            </div>
+                            <div class="grid-3-3-3-3">
+                                <select class="select-alt m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-alt-primary m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-alt-accent m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                                <select class="select-alt-warning m-3">
+                                    <option value="example-1">example-1</option>
+                                    <option value="example-2">example-2</option>
+                                    <option value="example-3">example-3</option>
+                                    <option value="example-4">example-4</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
